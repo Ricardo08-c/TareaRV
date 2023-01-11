@@ -22,7 +22,7 @@ function initScene() {
         meteors.forEach(pos => {
 
             meteor = document.createElement('a-entity')
-            meteor.setAttribute('geometry', { primitive: 'sphere', radius: Math.random() * 3 + 0.5 })
+            meteor.setAttribute('geometry', { primitive: 'sphere', radius: 2 })
             meteor.setAttribute('material', { shader: 'flat', src: '#meteor' })
             meteor.setAttribute('class', 'teleporter')
             meteor.object3D.position.set(pos.x, pos.y, pos.z)
@@ -61,6 +61,17 @@ AFRAME.registerComponent('teleporter', {
             console.log(cameraRig)
             document.querySelector('[text]').setAttribute('value', `Cantidad de lunas visitadas: ${++score} `)
             
+            
+        })
+    }
+})
+
+AFRAME.registerComponent('scenery', {
+    init: function () {
+        this.el.addEventListener('click', () => {
+            console.log(this.el)
+            document.getElementById("scene1").setAttribute("visible", "false")
+            document.getElementById("scene2").setAttribute("visible", "true")
             
         })
     }

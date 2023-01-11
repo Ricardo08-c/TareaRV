@@ -16,13 +16,14 @@
     <a-scene>
 
         <a-assets>
+
             <img src="textures/sky.jpeg" id="sky">
             <img src="textures/meteor.jpeg" id="meteor">
             
         </a-assets>
 
 
-        <a-entity visible = "true">
+        <a-entity id = "scene1" visible = "true">
             <a-sky src="#sky"></a-sky>
             <a-entity id="leftHand" shoot-controls="hand: left" weapon shoot></a-entity>
 
@@ -47,33 +48,53 @@
 
                 <a-text value="Cantidad de Lunas visitadas: 0" color="white" position="0 -0.1 -1" width="1" align="center"></a-text>
                 
-                <a-entity id ="raycast" cursor="fuse: true; fuseTimeout: 100" position="0 0 -1" raycaster="objects: .teleporter" 
-                raycaster="objects: .meteor" 
+                <a-entity id ="raycast" cursor="fuse: true; fuseTimeout: 100" position="0 0 -1" raycaster="objects: .scener, .teleporter " 
+                
                     geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="shader: flat">
                 
                 </a-entity>
                 
-        
-    
-            
+                
+                        
             </a-entity>
+            <a-box scenery class = "scener"color="yellow" position="30 0 0" width = "30">
+                <a-text value="Cantidad de Lunas visitadas: 0" color="black" position="relative"  align="center"></a-text>
+             </a-box>
+
 
           </a-entity>   
 
-        <a-entity visible  = "false">
-            <a-sky src="#sky"></a-sky>
+       
         
 
       
 </a-entity>
-<a-entity id="scene1" visible  = "false">
+<a-entity  visible  = "false">
+
     <a-box class="box" position = "0 -5 -3" color="red" shootable> </a-box>
   </a-entity>
 
   <a-entity id="scene2" visible="false">
+    <a-sky src="#sky"></a-sky>
+
     <a-box color="green" position="0 2 -5"> </a-box>
     <a-box color="yellow" position="5 0 -5"> </a-box>
     <a-box color="blue" position="0 0 -1"> </a-box>
+</a-entity>
+          
+<a-entity id = "camera"position = "0 1 0 " camera look-controls>
+
+    <a-text value="Cantidad de Lunas visitadas: 0" color="white" position="0 -0.1 -1" width="1" align="center"></a-text>
+    
+    <a-entity id ="raycast" cursor="fuse: true; fuseTimeout: 100" position="0 0 -1" raycaster="objects: .scener " 
+    
+        geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="shader: flat">
+    
+    </a-entity>
+    
+    
+            
+</a-entity>
   </a-entity>
 
   
