@@ -18,35 +18,106 @@
         <a-assets>
 
             <img src="textures/sky.jpeg" id="sky">
+            <img src="textures/earth.jpeg" id="earth">
+            <img src="textures/mars.jpeg" id="mars">
             <img src="textures/meteor.jpeg" id="meteor">
+            <img src="textures/mercury.jpeg" id="mercury">
+            <img src="textures/venus.jpeg" id="venus">
+            <img src="textures/sun.jpeg" id="sun">
+            <img src="textures/Jupiter.jpeg" id="jupiter">
+            <img src="textures/saturn.jpeg" id="saturn">
+            <img src="textures/saturnRing.png" id="saturnRing">
+            <img src="textures/uranus.jpeg" id="uranus">
+            <img src="textures/neptune.jpeg" id="neptune">
             
         </a-assets>
 
 
         <a-entity id = "scene1" visible = "true">
             <a-sky src="#sky"></a-sky>
-            <a-entity id="leftHand" shoot-controls="hand: left" weapon shoot></a-entity>
+
+            <a-sphere class = ""   position = "-10 3 20"radius="20" material="shader: flat; src:#sun"></a-sphere>
+        <a-entity class="orbit" animation = "" position="0 3 0" >
+            
+            <a-ring radius-inner="50" radius-outer="50.5" material = "shader:flat;color:blue" rotation = "90 0 0"position = "-10 2 30"></a-ring>
+            <a-sphere  class = "teleporter" teleporter material="shader: flat; src:#mercury" position = "-10 1 -20"radius="1"
+            animation="property: rotation; to: 0 360 0; loop: true; dur:20000;  easing: linear">
+                
+
+            </a-sphere>
+            <a-text value="Mercurio" color="white" position = "-10 -1 -20" width="10" height = "10" align="center"></a-text>
+
+            <a-ring radius-inner="100" radius-outer="100.5" material = "shader:flat;color:blue" rotation = "90 0 0"position = "-10 5 49"></a-ring>
+
+            <a-sphere class = "teleporter" teleporter  
+            position = "-20 5 -50"radius="3" material="shader: flat; src:#venus"
+            animation="property: rotation; to: 0 360 0; loop: true; dur:20000;  easing: linear"></a-sphere>
+
+            <a-text value="Venus" color="white" position = "-20 1 -50" width="10" height = "10" align="center"></a-text>
+
+            <a-ring radius-inner="138" radius-outer="138.5" material = "color:blue" rotation = "90 0 0"position = "-10 10 50"></a-ring>
 
 
-        <a-entity class="orbit" position="0 3 0" rotation="0 0 0"
-            animation="property: rotation; to: 0 360 360; loop: true; dur: 40000;  easing: linear">
+            <a-sphere class = "teleporter"  teleporter position = "30 9 -80"radius="5" material="shader: flat; src:#earth"
+            animation="property: rotation; to: 0 360 0; loop: true; dur:20000;  easing: linear">
+              
+            </a-sphere>
+            <a-text value="Tierra" color="white" position = "30 3 -80" width="10" height = "10" align="center"></a-text>
+
+            <a-ring radius-inner="165" radius-outer="165.5" material = "color:blue" rotation = "90 0 0"position = "-10 13 50"></a-ring>
+
+            <a-sphere  class = "teleporter" teleporter position = "-50 13 -110"radius="2" material="shader: flat; src:#mars"
+            animation="property: rotation; to: 0 360 0; loop: true; dur:20000;  easing: linear"></a-sphere>
+            <a-text value="Marte" color="white" position = "-50 7 -110" width="10" height = "10" align="center"></a-text>
+
+
+            <a-ring radius-inner="195" radius-outer="195.5" material = "color:blue" rotation = "90 0 0"position = "-10 15 50"></a-ring>
+
+
+            <a-sphere  class = "teleporter" teleporter position = "40 17 -140"radius="8" material="shader: flat; src:#jupiter"
+            animation="property: rotation; to: 0 360 0; loop: true; dur:20000;  easing: linear"></a-sphere>
+            <a-text value="Jupiter" color="white" position = "40 20 -140" width="13" height = "13" align="center"></a-text>
+
+            <a-ring radius-inner="220" radius-outer="220.5" material = "color:blue" rotation = "90 0 0"position = "-10 21 50"></a-ring>
+
+            <a-sphere  class = "teleporter" teleporter position = "-10 20 -170"radius="7" material="shader: flat; src:#saturn"
+            animation="property: rotation; to: 0 360 0; loop: true; dur:20000;  easing: linear">
+            
+
+            </a-sphere>
+            <a-ring radius-inner="8" radius-outer="12" material = "shader:flat; src:#saturnRing" rotation = "90 0 0"position = "-10 20 -170"></a-ring>            
+            <a-text value="Saturno" color="white" position = "-10 10 -170" width="13" height = "13" align="center"></a-text>
+
+
+            <a-ring radius-inner="254" radius-outer="254.5" material = "color:blue" rotation = "90 0 0"position = "-10 25 50"></a-ring>
+
+            <a-sphere  class = "teleporter" teleporter position = "-60 25 -200"radius="4.5" material="shader: flat; src:#uranus"
+            animation="property: rotation; to: 0 360 0; loop: true; dur:20000;  easing: linear"></a-sphere>
+            <a-ring radius-inner="5" radius-outer="7" material = "shader:flat; src:#uranus" rotation = "90 0 0"position = "-60 25 -200"></a-ring>
+            <a-text value="Urano" color="white" position = "-60 19 -200" width="13" height = "13" align="center"></a-text>
+            
+
+            <a-ring radius-inner="280" radius-outer="280.5" material = "color:blue" rotation = "90 0 0"position = "-10 29 50"></a-ring>
+
+            <a-sphere  class = "teleporter" teleporter position = "-30 30 -230"radius="4" material="shader: flat; src:#neptune"
+            animation="property: rotation; to: 0 360 0; loop: true; dur:10000;  easing: linear"></a-sphere>
+            
+            <a-text value="Neptuno" color="white" position = "-30 23 -230" width="13" height = "13" align="center"></a-text>
+            <a-sphere class = "teleporter"  teleporter position = "-10 -120 -20"radius="6" material="shader: flat; color:red"
+            animation="property: rotation; to: 0 360 0; loop: true; dur:10000;  easing: linear"></a-sphere>
+
         </a-entity>
+        <a-text  value=" Mira la caja para cambiar de escena o mira hacia arriba para ir a algun planeta" color="white" rotation = "3 1 -2" position="-10 -122 -25" width="6" align="center"></a-text>
+<a-box class = "scener" scenery width = "2" height = "2" position  = "-10 -127 -25"></a-box>
+        
 
-        <a-entity class="orbit" position="0 0 0" rotation="0 0 -45"
-            animation="property: rotation; to: 0 -360 0; loop: true; dur: 30000; easing: linear">
-        </a-entity>
+        <a-text value="Bienvenido, mira al planeta rojo de abajo para tener una mejor vista!" color="white" rotation = "0 -50 0" position="3 1 -2" width="6" align="center"></a-text>
 
-        <a-entity class="orbit" position="0 -3 0" rotation="0 0 -90"
-            animation="property: rotation; to: 0 360 360; loop: true; dur: 20000; easing: linear">
-        </a-entity>
-
-        <a-entity class="orbit" position="0 0 0" rotation="0 0 -120"
-            animation="property: rotation; to: 360 -360 0; loop: true; dur: 50000; easing: linear">
-        </a-entity>
+        
           
             <a-entity id = "camera"position = "0 1 0 " camera look-controls>
 
-                <a-text value="Cantidad de Lunas visitadas: 0" color="white" position="0 -0.1 -1" width="1" align="center"></a-text>
+                <a-text value=" " color="white" position="0 -0.1 -1" width="1" align="center"></a-text>
                 
                 <a-entity id ="raycast" cursor="fuse: true; fuseTimeout: 100" position="0 0 -1" raycaster="objects: .scener, .teleporter " 
                 
@@ -57,10 +128,7 @@
                 
                         
             </a-entity>
-            <a-box scenery class = "scener"color="yellow" position="30 0 0" width = "30">
-                <a-text value="Cantidad de Lunas visitadas: 0" color="black" position="relative"  align="center"></a-text>
-             </a-box>
-
+            
 
           </a-entity>   
 
@@ -82,17 +150,6 @@
     <a-box color="blue" position="0 0 -1"> </a-box>
 </a-entity>
           
-<a-entity id = "camera"position = "0 1 0 " camera look-controls>
-
-    <a-text value="Cantidad de Lunas visitadas: 0" color="white" position="0 -0.1 -1" width="1" align="center"></a-text>
-    
-    <a-entity id ="raycast" cursor="fuse: true; fuseTimeout: 100" position="0 0 -1" raycaster="objects: .scener " 
-    
-        geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="shader: flat">
-    
-    </a-entity>
-    
-    
             
 </a-entity>
   </a-entity>

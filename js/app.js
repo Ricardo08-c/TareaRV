@@ -1,37 +1,18 @@
 window.addEventListener('load', initScene)
 
 const meteors = [
-    { x: 0, y: 0, z: -30 },
-    { x: 0, y: 0, z: 30 },
-    { x: 30, y: 0, z: 0 },
-    { x: -30, y: 0, z: 0 },
-    { x: 20, y: 0, z: 20 },
-    { x: 20, y: 0, z: -20 },
-    { x: -20, y: 0, z: -20 },
-    { x: -20, y: 0, z: 20 }
+    { x: -20, y: 0, z: -30 },
+    { x: -20, y: 0, z: -60 },
+    { x: -20, y: 0, z: -90 },
+    { x: -20, y: 0, z:-110 },
+    
 ]
 
 let meteor, score = 0
 
 function initScene() {
 
-    let orbits = document.querySelectorAll('.orbit')
-
-    orbits.forEach(orbit => {
-
-        meteors.forEach(pos => {
-
-            meteor = document.createElement('a-entity')
-            meteor.setAttribute('geometry', { primitive: 'sphere', radius: 2 })
-            meteor.setAttribute('material', { shader: 'flat', src: '#meteor' })
-            meteor.setAttribute('class', 'teleporter')
-            meteor.object3D.position.set(pos.x, pos.y, pos.z)
-
-            meteor.setAttribute('teleporter', '')
-
-            orbit.appendChild(meteor)
-        })
-    })
+  
 }
 
 AFRAME.registerComponent('shootable', {
@@ -53,13 +34,22 @@ AFRAME.registerComponent('teleporter', {
             let camPos = objectToPos(cameraRig.getAttribute("position"))
             
             let pos = objectToPos(this.el.getAttribute("position"));
+            let a = objectToPos(this.el.getAttribute('rotation'));
+            console.log(a)
             
             
             cameraRig.setAttribute('position',pos)
-            cameraRig.setAttribute('rotation','100 90 0')
-            this.el.parentNode.removeChild(this.el)
+            cameraRig.setAttribute('rotation',a)
+
+           
+           
+            let animation='property: position; from:'+camPos+'; to: '+pos+'; dur: 1000'; 
+            
+            
+            cameraRig.setAttribute('animation',animation)
+            
             console.log(cameraRig)
-            document.querySelector('[text]').setAttribute('value', `Cantidad de lunas visitadas: ${++score} `)
+            document.getElementById('scores').setAttribute('value', `Cantidad de lunas visitadas: ${++score} `)
             
             
         })
