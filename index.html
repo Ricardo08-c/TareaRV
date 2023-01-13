@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garaje Code Pills | Aframe</title>
+    <title>Tarea Grupal | Aframe</title>
     
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
     <script src="js/app.js"></script>
 </head>
 
@@ -29,7 +30,7 @@
             <img src="textures/saturnRing.png" id="saturnRing">
             <img src="textures/uranus.jpeg" id="uranus">
             <img src="textures/neptune.jpeg" id="neptune">
-            
+            <img src="textures/pasto.jpg" id="pasto">
         </a-assets>
 
 
@@ -107,11 +108,13 @@
             animation="property: rotation; to: 0 360 0; loop: true; dur:10000;  easing: linear"></a-sphere>
 
         </a-entity>
-        <a-text  value=" Mira la caja para cambiar de escena o mira hacia arriba para ir a algun planeta" color="white" rotation = "3 1 -2" position="-10 -122 -25" width="6" align="center"></a-text>
-<a-box class = "scener" scenery width = "2" height = "2" position  = "-10 -127 -25"></a-box>
+        <a-text  value=" Cambia de juego o mira hacia arriba para ir a algun planeta" color="white" rotation = "3 1 -2" position="-10 -122 -25" width="6" align="center"></a-text>
+<a-link title="Jugar Golf"href="golf.html" class="scener" image="#pasto" width = "2" height = "2" position  = "-10 -127 -25"></a-link>
         
 
         <a-text value="Bienvenido, mira al planeta rojo de abajo para tener una mejor vista!" color="white" rotation = "0 -50 0" position="3 1 -2" width="6" align="center"></a-text>
+        <a-text value="Acerca De" color="white" rotation = "0 -50 0" position="3 0.3 -2" width="6" align="center"></a-text>
+        <a-text value="Tarea Grupal VR - A-Frame: Ricardo, Brandon" color="white" rotation = "0 -50 0" position="3 0 -2" width="6" align="center"></a-text>
 
         
           
@@ -141,13 +144,6 @@
 
     <a-box class="box" position = "0 -5 -3" color="red" shootable> </a-box>
   </a-entity>
-
-  <a-entity id="scene2" visible="false">
-    <a-sky src="#sky"></a-sky>
-
-    <a-box color="green" position="0 2 -5"> </a-box>
-    <a-box color="yellow" position="5 0 -5"> </a-box>
-    <a-box color="blue" position="0 0 -1"> </a-box>
 </a-entity>
           
             
@@ -156,12 +152,6 @@
 
   
     </a-scene>
-
-
-
-
-       
-
 </body>
 
 </html>
