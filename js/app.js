@@ -37,7 +37,7 @@ AFRAME.registerComponent("teleporter", {
       cameraRig.setAttribute("rotation", a);
 
       let animation =
-        "property: position; from:" + camPos + "; to: " + pos + "; dur: 1000";
+        "property: position; from:" + camPos + "; to: " + pos + "; dur: 2500";
 
       cameraRig.setAttribute("animation", animation);
 
