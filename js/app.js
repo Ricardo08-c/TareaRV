@@ -25,7 +25,7 @@ function objectToPos(obj) {
 
 AFRAME.registerComponent("teleporter", {
   init: function () {
-    this.el.addEventListener("click", () => {
+    this.el.addEventListener("mouseenter", () => {
       let cameraRig = document.getElementById("camera");
       let camPos = objectToPos(cameraRig.getAttribute("position"));
 
